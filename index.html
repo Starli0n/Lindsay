@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lindsay:</title>
+    </head>
+
+    <body>
+        <script
+            src="https://code.jquery.com/jquery-3.1.0.slim.min.js"
+            integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="
+            crossorigin="anonymous"></script>
+
+        <div>
+            <p>Lines:</p>
+            <p><textarea id="iSource" rows="20" cols="76"></textarea></p>
+            <p><button id="iSay">Say</button></p>
+        </div>
+
+        <div>
+            <p>
+                <div id="iReader"><!-- The text will be inserted here --></div>
+            </p>
+
+            <p>I am done.</p>
+            <p><!-- Fake paragraph to trigger Firefox Reader mode -->
+                -----------------------------------------------------------------------------------------------------------------------<br/>
+                -----------------------------------------------------------------------------------------------------------------------<br/>
+                -----------------------------------------------------------------------------------------------------------------------<br/>
+                -----------------------------------------------------------------------------------------------------------------------<br/>
+                -----------------------------------------------------------------------------------------------------------------------<br/>
+                -----------------------------------------------------------------------------------------------------------------------<br/>
+                -----------------------------------------------------------------------------------------------------------------------<br/>
+             </p>
+        </div>
+
+        <script type="text/javascript">
+
+            $('#iSay').click(function () {
+                var source = document.getElementById('iSource');
+                var reader = document.getElementById('iReader');
+                reader.innerHTML = source.value;
+                source.value = '';
+            });
+
+        </script>
+    </body>
+</html>
