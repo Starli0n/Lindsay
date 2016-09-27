@@ -38,7 +38,7 @@
             $('#iSay').click(function () {
                 var source = document.getElementById('iSource');
                 var reader = document.getElementById('iReader');
-                reader.innerHTML = source.value.replace("'", "");
+                reader.innerHTML = source.value.replace("'", "").replace(/(?:\r\n|\r|\n)/g, '<br />');
                 source.value = '';
             });
 
